@@ -213,7 +213,7 @@ GROUP BY especie, Data_Consulta, nome_pet
 ORDER BY Data_Consulta
 ```
 <br><br><br>
- O arquivo desta base de dados se encontra neste repositório. 🤙<br><br>
+ O arquivo base de dados *ipetcare.sql* se encontra neste repositório. 🤙<br><br>
 ![ipetcare-logo](https://user-images.githubusercontent.com/37374749/143184679-b9bb6239-903d-4f62-bb11-b6d2799959e0.JPG)
 <br><br>
 [Subir ⬆️](#projeto-disciplina-cc5232-banco-de-dados---fei)
