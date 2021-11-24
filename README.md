@@ -1,5 +1,5 @@
 # Projeto Disciplina CC5232 Banco de Dados - FEI
-*O trabalho prático da disciplina tem por objetivo desenvolver um projeto de Banco de Dados que simula uma clínica veterinária.*
+*O trabalho prático da disciplina tem por objetivo desenvolver um projeto de Banco de Dados que simula uma clínica veterinária. Todos os dados da tabela são fictícios.*
 #### Integrantes:
 Camylla Dias e Marcella Costa
 
