@@ -7,7 +7,7 @@
 |  Marcella Costa | 221190234 |
 ---
 #### ER Diagram:
-![MER-ProjetoBD drawio](https://user-images.githubusercontent.com/37374749/143149478-551a1f49-c7c5-44e2-bc04-059d78672200.png)
+![MER-ProjetoBD drawio](https://user-images.githubusercontent.com/37374749/143149924-49ff06f5-9514-438e-8c90-848f06809072.png)
 ---
 #### Modelo Relacional:
 ![ERDDiagram1](https://user-images.githubusercontent.com/37374749/143148632-426de5d1-eb23-45e3-a1e8-f05de9dd758c.jpg)
