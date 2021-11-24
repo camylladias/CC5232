@@ -1,2 +1,2 @@
-# Projeto da Disciplina CC5232 Banco de Dados - Centro Universitário FEI
+# Projeto Disciplina CC5232 Banco de Dados - C. Universitário FEI
 
