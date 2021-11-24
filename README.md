@@ -215,4 +215,4 @@ ORDER BY Data_Consulta
 <br><br><br>
  O arquivo base de dados *ipetcare.sql* se encontra neste repositório. 🤙  [up ⬆️](#projeto-disciplina-cc5232-banco-de-dados---fei)
  <br><br><br>
-![ipetcare-logo](https://user-images.githubusercontent.com/37374749/143184679-b9bb6239-903d-4f62-bb11-b6d2799959e0.JPG)
+![ipetcare-logo](https://user-images.githubusercontent.com/37374749/143195860-b3599606-73f1-4028-8c69-ca0af39534a2.JPG)
