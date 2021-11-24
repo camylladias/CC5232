@@ -1,7 +1,6 @@
 # Projeto Disciplina CC5232 Banco de Dados - FEI 
 
-*O trabalho prático tem por objetivo desenvolver um projeto de Banco de Dados que simula uma clínica veterinária. Todos os dados das tabelas são fictícios.*
-🐱 🐹 🐶 🦎
+*O trabalho prático tem por objetivo desenvolver um projeto de Banco de Dados que simula uma clínica veterinária.<br> O projeto foi criado utilizando PostgreSQL 14, pgAdmin 4 e ElephantSQL (GCP). Todos os dados das tabelas são fictícios.* 🐱 🐹 🐶 🦎
 
 **Integrantes:** Camylla Dias e Marcella Costa
 
@@ -75,5 +74,136 @@ Funcionário e Pessoa.<br><br>
 *Castração:* Castração de animais de ambos os sexos.<br>
 *Higienização:* Banho e Tosa.<br>
 *Dentista:* Limpeza, extração ou qualquer outro procedimento relacionado.<br>
-*Fisioterapia:* Recuperação física do pet pós cirurgia, pós trauma etc.<br>
+*Fisioterapia:* Recuperação física do pet pós cirurgia, pós trauma etc.
+<br><br><br>
 
+### Comandos
+*obs: a base de dados foi criada atráves da utilização do ElephantSQL.*
+- Cria tabela Pessoa
+```
+CREATE TABLE Pessoa (
+cpf BIGINT PRIMARY KEY,
+nome VARCHAR(255),
+email VARCHAR(255) UNIQUE,
+data_nascimento DATE
+);
+```
+<br><br>
+- Cria tabela Funcionário
+```
+CREATE TABLE Funcionario (
+id_funcionario INT PRIMARY KEY,
+cpf BIGINT,
+FOREIGN KEY (cpf) REFERENCES Pessoa (cpf),
+salario DECIMAL(16,2),
+vale_refeicao VARCHAR(255),
+vale_transporte VARCHAR(255),
+convenio_medico VARCHAR(255));
+```
+<br><br>
+- Cria tabela Tutor
+```
+CREATE TABLE Tutor (
+id_cliente INT PRIMARY KEY,
+cpf BIGINT,
+FOREIGN KEY (cpf) REFERENCES Pessoa (cpf)
+);
+```
+<br><br>
+- Adiciona Foreign Key:
+```
+ALTER TABLE Tutor ADD FOREIGN KEY (id_pet) REFERENCES 
+Pet (id_pet)
+```
+*obs: adicionar foreign key após a criação da tabela de referência.*
+<br><br>
+- Cria tabela Pet
+```
+CREATE TABLE Pet (
+id_pet INT PRIMARY KEY,
+id_carteira_vacinacao BIGINT UNIQUE,
+id_cliente INT,
+FOREIGN KEY (id_cliente) REFERENCES Tutor (id_cliente),
+nome_pet VARCHAR(255),
+especie VARCHAR(255),
+data_nascimento_pet DATE,
+genero VARCHAR(10)
+);
+```
+<br><br>
+- Cria tabela Veterinário
+```
+CREATE TABLE Veterinario (
+id_funcionario INT UNIQUE,
+FOREIGN KEY (id_funcionario) REFERENCES Funcionario (id_funcionario),
+crmv BIGINT UNIQUE,
+curso_graduacao VARCHAR(255),
+curso_especializacao VARCHAR(255)
+);
+```
+<br><br>
+- Cria tabela Técnico Veterinário
+```
+CREATE TABLE Tecnico_Veterinario (
+id_funcionario INT UNIQUE,
+FOREIGN KEY (id_funcionario) REFERENCES Funcionario (id_funcionario),
+curso_tecnico VARCHAR(255)
+);
+```
+<br><br>
+- Cria tabela Recepcionista
+```
+CREATE TABLE Recepcionista (
+id_funcionario INT UNIQUE,
+FOREIGN KEY (id_funcionario) REFERENCES Funcionario (id_funcionario)
+);
+```
+<br><br>
+- Cria tabela Consulta
+```
+CREATE TABLE Consulta (
+id_consulta INT PRIMARY KEY,
+id_tipo_consulta INT,
+id_funcionario INT,
+id_cliente INT,
+id_pet INT,
+valor DECIMAL(16,2),
+data_consulta DATE,
+horario TIME,
+FOREIGN KEY (id_funcionario) REFERENCES Veterinario (id_funcionario),
+FOREIGN KEY (id_cliente) REFERENCES Tutor (id_cliente),
+FOREIGN KEY (id_pet) REFERENCES Pet (id_pet)
+);
+```
+<br><br>
+- Adiciona Foreign Key
+```
+ALTER TABLE Consulta ADD FOREIGN KEY (id_tipo_consulta) REFERENCES
+Tipo_Consulta (id_tipo_consulta)
+```
+<br><br>
+- Cria tabela Tipo Consulta
+```
+CREATE TABLE Tipo_Consulta (
+id_tipo_consulta INT PRIMARY KEY,
+clinica_geral BOOLEAN,
+castracao BOOLEAN,
+higienizacao BOOLEAN,
+dentista BOOLEAN,
+fisioterapia BOOLEAN
+);
+```
+<br><br><br>
+### Consulta solicitada:
+*"Liste as consultas durante o primeiro semestre de 2021? Agrupe a informação por espécie de animal tratado e mês."*
+- Query Utilizada:
+```
+SELECT nome_pet, especie, Data_Consulta
+FROM Consulta as Cons inner join
+Pet as Pet on Pet.id_pet = Cons.id_pet
+WHERE Data_Consulta BETWEEN '01-01-2021' AND '06-30-2021'
+GROUP BY especie, Data_Consulta, nome_pet
+ORDER BY Data_Consulta
+```
+<br><br><br>
+O arquivo desta base de dados se encontra neste repositório. 🤙
