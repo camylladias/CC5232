@@ -3,14 +3,15 @@
 *O trabalho prático tem por objetivo desenvolver um projeto de Banco de Dados que simula uma clínica veterinária.<br> O projeto foi criado utilizando PostgreSQL 14, pgAdmin 4 e ElephantSQL (GCP). Todos os dados das tabelas são fictícios.* 🐱 🐹 🐶 🦎
 
 **Integrantes:** Camylla Dias e Marcella Costa
-
-[Universo do Discurso](#universo-do-discurso)<br>
-[ER Diagram](#er-diagram)<br>
-[Modelo Relacional](#modelo-relacional)<br>
-[](#)<br>
-[](#)<br>
-[](#)<br>
-[](#)
+<br><br>
+### Tópicos
+[1. Universo do Discurso](#universo-do-discurso)<br>
+[2. ER Diagram](#er-diagram)<br>
+[3. Modelo Relacional](#modelo-relacional)<br>
+[4. Principais Atividades](#principais-atividades)<br>
+[5. Entidades e seus Atributos](#entidades-e-seus-atributos)<br>
+[6. Comandos](#comandos)<br>
+[7. Consulta Solicitada](#consulta-solicitada)
 
 
 ---
@@ -200,7 +201,7 @@ fisioterapia BOOLEAN
 );
 ```
 <br><br><br>
-### Consulta solicitada:
+### Consulta Solicitada:
 *"Liste as consultas durante o primeiro semestre de 2021? Agrupe a informação por espécie de animal tratado e mês."*
 - Query Utilizada:
 ```
@@ -215,4 +216,4 @@ ORDER BY Data_Consulta
  O arquivo desta base de dados se encontra neste repositório. 🤙<br><br>
 ![ipetcare-logo](https://user-images.githubusercontent.com/37374749/143184679-b9bb6239-903d-4f62-bb11-b6d2799959e0.JPG)
 <br><br>
-<p align="center><a href="#projeto-disciplina-cc5232-banco-de-dados---fei">⬆️</a></p>
+[Subir ⬆️](#projeto-disciplina-cc5232-banco-de-dados---fei)
