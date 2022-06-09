@@ -2,7 +2,6 @@
 
 *O trabalho prático tem por objetivo desenvolver um projeto de Banco de Dados que simula uma clínica veterinária.<br> O projeto foi criado utilizando PostgreSQL 14, pgAdmin 4 e ElephantSQL (GCP). Todos os dados das tabelas são fictícios.* 🐱 🐹 🐶 🦎
 
-**Integrantes:** Camylla Dias e Marcella Costa
 <br><br>
 ### Tópicos
 [1. Universo do Discurso](#universo-do-discurso)<br>
